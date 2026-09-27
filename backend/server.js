@@ -5,7 +5,6 @@ const morgan = require("morgan");
 const connectDB = require("./config/db");
 const { errorHandler, notFound } = require("./middleware/errorHandler");
 
-const authRoutes = require("./routes/authRoutes");
 const employeeRoutes = require("./routes/employeeRoutes");
 const departmentRoutes = require("./routes/departmentRoutes");
 const facilityRoutes = require("./routes/facilityRoutes");
@@ -19,8 +18,6 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 app.get("/api/health", (req, res) => res.json({ success: true, message: "Shield API is running." }));
-
-app.use("/api/auth", authRoutes);
 app.use("/api/employees", employeeRoutes);
 app.use("/api/departments", departmentRoutes);
 app.use("/api/facilities", facilityRoutes);

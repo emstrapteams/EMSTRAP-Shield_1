@@ -1,6 +1,4 @@
 const express = require("express");
-const { protect, authorize } = require("../middleware/auth");
-const enforceCompanyIsolation = require("../middleware/companyIsolation");
 const { validateDepartment } = require("../validation/departmentValidation");
 const {
   createDepartment,
@@ -12,8 +10,6 @@ const {
 } = require("../controllers/departmentController");
 
 const router = express.Router();
-
-router.use(protect, authorize("company_admin", "super_admin"), enforceCompanyIsolation);
 
 router.get("/", getDepartments);
 router.post("/", validateDepartment, createDepartment);
