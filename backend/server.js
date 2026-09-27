@@ -8,6 +8,11 @@ const { errorHandler, notFound } = require("./middleware/errorHandler");
 const employeeRoutes = require("./routes/employeeRoutes");
 const departmentRoutes = require("./routes/departmentRoutes");
 const facilityRoutes = require("./routes/facilityRoutes");
+const equipmentRoutes = require("./routes/equipmentRoutes");
+const fireExtinguisherRoutes = require("./routes/fireExtinguisherRoutes");
+const firstAidKitRoutes = require("./routes/firstAidKitRoutes");
+const inspectionRoutes = require("./routes/inspectionRoutes");
+const correctiveActionRoutes = require("./routes/correctiveActionRoutes");
 
 connectDB();
 
@@ -21,6 +26,11 @@ app.get("/api/health", (req, res) => res.json({ success: true, message: "Shield 
 app.use("/api/employees", employeeRoutes);
 app.use("/api/departments", departmentRoutes);
 app.use("/api/facilities", facilityRoutes);
+app.use("/api/equipment", equipmentRoutes);
+app.use("/api/fire-extinguishers", fireExtinguisherRoutes);
+app.use("/api/first-aid-kits", firstAidKitRoutes);
+app.use("/api/inspections", inspectionRoutes);
+app.use("/api/corrective-actions", correctiveActionRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
