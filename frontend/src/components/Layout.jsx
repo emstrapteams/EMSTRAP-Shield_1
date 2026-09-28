@@ -8,8 +8,14 @@ export default function Layout() {
   return (
     <div className="app-shell">
       <aside className="sidebar">
+
         <div className="brand">
-          <span className="brand-mark">🛡️</span>
+          <img
+            src="/logo.png"
+            alt="EMSTRAP"
+            className="brand-logo"
+          />
+
           <div>
             <div className="brand-title">EMSTRAP Shield</div>
             <div className="brand-sub">Phase 1 + Safety Management</div>
@@ -17,38 +23,39 @@ export default function Layout() {
         </div>
 
         <nav className="nav">
-  <NavLink to="/employees" className={linkClass}>
-    Employees
-  </NavLink>
+          <NavLink to="/employees" className={linkClass}>
+            Employees
+          </NavLink>
 
-  <NavLink to="/departments" className={linkClass}>
-    Departments
-  </NavLink>
+          <NavLink to="/departments" className={linkClass}>
+            Departments
+          </NavLink>
 
-  <NavLink to="/facilities" className={linkClass}>
-    Facilities
-  </NavLink>
+          <NavLink to="/facilities" className={linkClass}>
+            Facilities
+          </NavLink>
 
-  <NavLink to="/equipment" className={linkClass}>
-    Safety Equipment
-  </NavLink>
+          <NavLink to="/equipment" className={linkClass}>
+            Safety Equipment
+          </NavLink>
 
-  <NavLink to="/fire-extinguishers" className={linkClass}>
-    Fire Extinguishers
-  </NavLink>
+          <NavLink to="/fire-extinguishers" className={linkClass}>
+            Fire Extinguishers
+          </NavLink>
 
-  <NavLink to="/first-aid-kits" className={linkClass}>
-    First-Aid Kits
-  </NavLink>
+          <NavLink to="/first-aid-kits" className={linkClass}>
+            First-Aid Kits
+          </NavLink>
 
-  <NavLink to="/inspections" className={linkClass}>
-    Inspections
-  </NavLink>
+          <NavLink to="/inspections" className={linkClass}>
+            Inspections
+          </NavLink>
 
-  <NavLink to="/corrective-actions" className={linkClass}>
-    Corrective Actions
-  </NavLink>
-</nav>
+          <NavLink to="/corrective-actions" className={linkClass}>
+            Corrective Actions
+          </NavLink>
+        </nav>
+
       </aside>
 
       <main className="content">
