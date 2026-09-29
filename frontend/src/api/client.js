@@ -56,3 +56,50 @@ export const api = {
   put: (path, body) => request(path, { method: "PUT", body }),
   patch: (path, body) => request(path, { method: "PATCH", body }),
 };
+export async function downloadReport(path, params, fallbackFilename = "report") {
+  let url = `${BASE_URL}${path}`;
+
+  const qs = new URLSearchParams(
+    Object.entries(params).filter(
+      ([, v]) => v !== undefined && v !== null && v !== ""
+    )
+  ).toString();
+
+  if (qs) url += `?${qs}`;
+
+  const headers = {};
+  if (COMPANY_ID) headers["x-company-id"] = COMPANY_ID;
+
+  const res = await fetch(url, { headers });
+
+  if (!res.ok) {
+    let message = `Report request failed (${res.status})`;
+
+    try {
+      const payload = await res.json();
+      message = payload.message || message;
+    } catch {
+      // Keep the default message if the response is not JSON.
+    }
+
+    throw new Error(message);
+  }
+
+  const blob = await res.blob();
+
+  const disposition = res.headers.get("Content-Disposition") || "";
+  const match = disposition.match(/filename="?([^"]+)"?/);
+  const filename = match ? match[1] : fallbackFilename;
+
+  const blobUrl = window.URL.createObjectURL(blob);
+  const link = document.createElement("a");
+
+  link.href = blobUrl;
+  link.download = filename;
+
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+
+  window.URL.revokeObjectURL(blobUrl);
+}

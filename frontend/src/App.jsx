@@ -38,6 +38,12 @@ import TrainingSessionDetail from "./pages/TrainingSessionDetail";
 import Drills from "./pages/Drills";
 import DrillForm from "./pages/DrillForm";
 import DrillDetail from "./pages/DrillDetail";
+import Dashboard from "./pages/Dashboard";
+import Reports from "./pages/Reports";
+import Companies from "./pages/Companies";
+import CompanyDetail from "./pages/CompanyDetail";
+import CompanyForm from "./pages/CompanyForm";
+import AuditLogs from "./pages/AuditLogs";
 
 function AppRoutes() {
   return (
@@ -102,6 +108,16 @@ function AppRoutes() {
         <Route path="/drills/new" element={<DrillForm />} />
         <Route path="/drills/:id" element={<DrillDetail />} />
         <Route path="/drills/:id/edit" element={<DrillForm />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+
+<Route path="/reports" element={<Reports />} />
+
+<Route path="/companies" element={<Companies />} />
+<Route path="/companies/new" element={<CompanyForm />} />
+<Route path="/companies/:id" element={<CompanyDetail />} />
+<Route path="/companies/:id/edit" element={<CompanyForm />} />
+
+<Route path="/audit-logs" element={<AuditLogs />} />
       </Route>
 
       <Route path="*" element={<Navigate to="/employees" replace />} />

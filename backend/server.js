@@ -19,6 +19,10 @@ const trainingSessionRoutes = require("./routes/trainingSessionRoutes");
 const trainingAttendanceRoutes = require("./routes/trainingAttendanceRoutes");
 const trainingDashboardRoutes = require("./routes/trainingDashboardRoutes");
 const drillRoutes = require("./routes/drillRoutes");
+const auditLogRoutes = require("./routes/auditLogRoutes");
+const companyRoutes = require("./routes/companyRoutes");
+const dashboardRoutes = require("./routes/dashboardRoutes");
+const reportRoutes = require("./routes/reportRoutes");
 
 connectDB();
 
@@ -43,6 +47,10 @@ app.use("/api/training-sessions", trainingSessionRoutes);
 app.use("/api/training-attendance", trainingAttendanceRoutes);
 app.use("/api/training-dashboard", trainingDashboardRoutes);
 app.use("/api/drills", drillRoutes);
+app.use("/api/audit-logs", auditLogRoutes);
+app.use("/api/companies", companyRoutes);
+app.use("/api/dashboard", dashboardRoutes);
+app.use("/api/reports", reportRoutes);
 
 app.use(notFound);
 app.use(errorHandler);

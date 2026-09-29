@@ -74,6 +74,21 @@ export default function Layout() {
 <NavLink to="/drills" className={linkClass}>
   Emergency Drills
 </NavLink>
+<NavLink to="/dashboard" className={linkClass}>
+  Dashboard
+</NavLink>
+
+<NavLink to="/reports" className={linkClass}>
+  Reports
+</NavLink>
+
+<NavLink to="/companies" className={linkClass}>
+  Companies
+</NavLink>
+
+<NavLink to="/audit-logs" className={linkClass}>
+  Audit Logs
+</NavLink>
         </nav>
 
       </aside>
