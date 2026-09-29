@@ -18,7 +18,7 @@ export default function Layout() {
 
           <div>
             <div className="brand-title">EMSTRAP Shield</div>
-            <div className="brand-sub">Phase 1 + Safety Management</div>
+            
           </div>
         </div>
 
@@ -53,7 +53,27 @@ export default function Layout() {
 
           <NavLink to="/corrective-actions" className={linkClass}>
             Corrective Actions
+
           </NavLink>
+          <NavLink to="/emergency-resources" className={linkClass}>
+  Emergency Resources
+</NavLink>
+
+<NavLink to="/training-dashboard" className={linkClass}>
+  Training Dashboard
+</NavLink>
+
+<NavLink to="/training-programs" className={linkClass}>
+  Training Programs
+</NavLink>
+
+<NavLink to="/training-sessions" className={linkClass}>
+  Training Sessions
+</NavLink>
+
+<NavLink to="/drills" className={linkClass}>
+  Emergency Drills
+</NavLink>
         </nav>
 
       </aside>

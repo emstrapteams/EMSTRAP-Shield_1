@@ -13,6 +13,12 @@ const fireExtinguisherRoutes = require("./routes/fireExtinguisherRoutes");
 const firstAidKitRoutes = require("./routes/firstAidKitRoutes");
 const inspectionRoutes = require("./routes/inspectionRoutes");
 const correctiveActionRoutes = require("./routes/correctiveActionRoutes");
+const emergencyResourceRoutes = require("./routes/emergencyResourceRoutes");
+const trainingProgramRoutes = require("./routes/trainingProgramRoutes");
+const trainingSessionRoutes = require("./routes/trainingSessionRoutes");
+const trainingAttendanceRoutes = require("./routes/trainingAttendanceRoutes");
+const trainingDashboardRoutes = require("./routes/trainingDashboardRoutes");
+const drillRoutes = require("./routes/drillRoutes");
 
 connectDB();
 
@@ -31,6 +37,12 @@ app.use("/api/fire-extinguishers", fireExtinguisherRoutes);
 app.use("/api/first-aid-kits", firstAidKitRoutes);
 app.use("/api/inspections", inspectionRoutes);
 app.use("/api/corrective-actions", correctiveActionRoutes);
+app.use("/api/emergency-resources", emergencyResourceRoutes);
+app.use("/api/training-programs", trainingProgramRoutes);
+app.use("/api/training-sessions", trainingSessionRoutes);
+app.use("/api/training-attendance", trainingAttendanceRoutes);
+app.use("/api/training-dashboard", trainingDashboardRoutes);
+app.use("/api/drills", drillRoutes);
 
 app.use(notFound);
 app.use(errorHandler);

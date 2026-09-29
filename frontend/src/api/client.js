@@ -1,5 +1,7 @@
 const BASE_URL = import.meta.env.VITE_API_BASE_URL || "/api";
 
+const COMPANY_ID = import.meta.env.VITE_COMPANY_ID || "";
+
 async function request(path, { method = "GET", body, params } = {}) {
   let url = `${BASE_URL}${path}`;
 
@@ -14,6 +16,10 @@ async function request(path, { method = "GET", body, params } = {}) {
   }
 
   const headers = { "Content-Type": "application/json" };
+
+  if (COMPANY_ID) {
+    headers["x-company-id"] = COMPANY_ID;
+  }
 
   const res = await fetch(url, {
     method,

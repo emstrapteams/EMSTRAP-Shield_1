@@ -25,6 +25,19 @@ import InspectionDetail from "./pages/InspectionDetail";
 import CorrectiveActions from "./pages/CorrectiveActions";
 import CorrectiveActionForm from "./pages/CorrectiveActionForm";
 import CorrectiveActionDetail from "./pages/CorrectiveActionDetail";
+import EmergencyResources from "./pages/EmergencyResources";
+import EmergencyResourceForm from "./pages/EmergencyResourceForm";
+import EmergencyResourceDetail from "./pages/EmergencyResourceDetail";
+import TrainingDashboard from "./pages/TrainingDashboard";
+import TrainingPrograms from "./pages/TrainingPrograms";
+import TrainingProgramForm from "./pages/TrainingProgramForm";
+import TrainingProgramDetail from "./pages/TrainingProgramDetail";
+import TrainingSessions from "./pages/TrainingSessions";
+import TrainingSessionForm from "./pages/TrainingSessionForm";
+import TrainingSessionDetail from "./pages/TrainingSessionDetail";
+import Drills from "./pages/Drills";
+import DrillForm from "./pages/DrillForm";
+import DrillDetail from "./pages/DrillDetail";
 
 function AppRoutes() {
   return (
@@ -64,10 +77,31 @@ function AppRoutes() {
 	<Route path="/inspections/new" element={<InspectionForm />} />
 	<Route path="/inspections/:id" element={<InspectionDetail />} />
 
-	`<Route path="/corrective-actions" element={<CorrectiveActions />} />
+	<Route path="/corrective-actions" element={<CorrectiveActions />} />
 	<Route path="/corrective-actions/new" element={<CorrectiveActionForm />} />
 	<Route path="/corrective-actions/:id" element={<CorrectiveActionDetail />} />
 	<Route path="/corrective-actions/:id/edit" element={<CorrectiveActionForm />} />
+          <Route path="/emergency-resources" element={<EmergencyResources />} />
+        <Route path="/emergency-resources/new" element={<EmergencyResourceForm />} />
+        <Route path="/emergency-resources/:id" element={<EmergencyResourceDetail />} />
+        <Route path="/emergency-resources/:id/edit" element={<EmergencyResourceForm />} />
+
+        <Route path="/training-dashboard" element={<TrainingDashboard />} />
+
+        <Route path="/training-programs" element={<TrainingPrograms />} />
+        <Route path="/training-programs/new" element={<TrainingProgramForm />} />
+        <Route path="/training-programs/:id" element={<TrainingProgramDetail />} />
+        <Route path="/training-programs/:id/edit" element={<TrainingProgramForm />} />
+
+        <Route path="/training-sessions" element={<TrainingSessions />} />
+        <Route path="/training-sessions/new" element={<TrainingSessionForm />} />
+        <Route path="/training-sessions/:id" element={<TrainingSessionDetail />} />
+        <Route path="/training-sessions/:id/edit" element={<TrainingSessionForm />} />
+
+        <Route path="/drills" element={<Drills />} />
+        <Route path="/drills/new" element={<DrillForm />} />
+        <Route path="/drills/:id" element={<DrillDetail />} />
+        <Route path="/drills/:id/edit" element={<DrillForm />} />
       </Route>
 
       <Route path="*" element={<Navigate to="/employees" replace />} />
